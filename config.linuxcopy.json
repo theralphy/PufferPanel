@@ -1,0 +1,31 @@
+{
+  "logs": "../PufferPanelData/logs",
+  "web": {
+    "host": "0.0.0.0:8080"
+  },
+  "token": {
+    "private": "../PufferPanelData/private.pem",
+    "public": "../PufferPanelData/public.pem"
+  },
+  "panel": {
+    "database": {
+      "dialect": "sqlite3",
+      "url": "file:../PufferPanelData/database.db?cache=shared",
+      "log": "true"
+    },
+    "web": {
+      "files": "client/dist"
+    },
+    "email": {
+      "templates": "assets/email/emails.json",
+      "provider": "debug"
+    }
+  },
+  "daemon": {
+    "data": {
+      "servers": "../PufferPanelData/servers",
+      "modules": "../PufferPanelData/modules",
+      "cache": "../PufferPanelData/cache"
+    }
+  }
+}
