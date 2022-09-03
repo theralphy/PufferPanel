@@ -1,18 +1,31 @@
 {
-  "logs": "/var/log/pufferpanel",
+  "logs": "../PufferPanelData/logs",
+  "web": {
+    "host": "0.0.0.0:8080"
+  },
+  "token": {
+    "private": "../PufferPanelData/private.pem",
+    "public": "../PufferPanelData/public.pem"
+  },
   "panel": {
     "database": {
       "dialect": "sqlite3",
-      "url": "file:/var/lib/pufferpanel/database.db?cache=shared"
+      "url": "file:../PufferPanelData/database.db?cache=shared",
+      "log": "true"
     },
     "web": {
-      "files": "/var/www/pufferpanel"
+      "files": "client/dist"
+    },
+    "email": {
+      "templates": "assets/email/emails.json",
+      "provider": "debug"
     }
   },
   "daemon": {
     "data": {
-      "cache": "/var/lib/pufferpanel/cache",
-      "servers": "/var/lib/pufferpanel/servers"
+      "servers": "../PufferPanelData/servers",
+      "modules": "../PufferPanelData/modules",
+      "cache": "../PufferPanelData/cache"
     }
   }
 }
